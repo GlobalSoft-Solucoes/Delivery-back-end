@@ -61,6 +61,22 @@ module.exports = {
     });
   },
 
+  // =========== VERIFICA SE O IMÓVEL ESTÁ DISPONÍVEL PARA CADASTRAR USUÁRIO ===========
+    async emailDisp(req, res) {
+        if (req.body.email == null)
+            res.status(400).send({ validou: "Erro, o campo email esta vazio" });
+        else {
+            const result = await db("FUNCIONARIO").where({
+                email: req.body.email,
+            });
+
+            if (result.length != 0) res.status(400).send({ validou: "E-mail já está sendo usado" });
+            else res.status(200).send({ validou: "E-mail disponível!" });
+        }
+    },
+
+
+/*
   async emailDisp(req, res) {
     if (req.body.email == null)
       res.status(400).send({ validou: "Erro, o campo email esta vazio" });
@@ -72,5 +88,5 @@ module.exports = {
       if (result.length != 0) res.status(400);
       else res.status(200);
     }
-  },
+  },*/
 };
