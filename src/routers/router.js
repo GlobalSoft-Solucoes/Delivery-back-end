@@ -18,8 +18,8 @@ app.post("/usuario", Usuario.cadastrar);
 app.delete("/usuario/:id", Usuario.deletar);
 app.put("/usuario", Usuario.atualizar);
 
-app.get("/funcionario/emailDisp", Funcionario.emailDisp);
-app.get("/funcionario/", Funcionario.validar);
+app.post("/funcionario/emaildisp", Funcionario.emailDisp);
+app.post("/funcionario/validar", Funcionario.validar);
 app.post("/funcionario", Funcionario.cadastrar);
 app.delete("/funcionario/:id", Funcionario.deletar);
 app.put("/funcionario", Funcionario.atualizar);
