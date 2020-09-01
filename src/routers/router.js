@@ -19,7 +19,8 @@ app.delete("/usuario/:id", Usuario.deletar);
 app.put("/usuario", Usuario.atualizar);
 
 app.post("/funcionario/emaildisp", Funcionario.emailDisp);
-app.post("/funcionario/atualizarsenha",Funcionario.AlterarSenha);
+
+app.put("/funcionario/atualizarsenha/:email",Funcionario.AlterarSenha);
 app.post("/funcionario/validar", Funcionario.validar);
 app.post("/funcionario", Funcionario.cadastrar);
 app.delete("/funcionario/:id", Funcionario.deletar);
