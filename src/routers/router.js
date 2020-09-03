@@ -1,4 +1,5 @@
 const express = require("express");
+const Mesa = require("../controllers/controller-mesa.js");
 const Usuario = require("../controllers/controller-usuario.js");
 const Produto = require("../controllers/controller-produto.js");
 const Venda = require("../controllers/controller-venda.js");
@@ -19,7 +20,6 @@ app.delete("/usuario/:id", Usuario.deletar);
 app.put("/usuario", Usuario.atualizar);
 
 app.post("/funcionario/emaildisp", Funcionario.emailDisp);
-
 app.put("/funcionario/atualizarsenha/:email",Funcionario.AlterarSenha);
 app.post("/funcionario/validar", Funcionario.validar);
 app.post("/funcionario", Funcionario.cadastrar);
@@ -31,6 +31,12 @@ app.get("/produto/:id", Produto.consultar);
 app.post("/produto", Produto.cadastrar);
 app.delete("/produto", Produto.deletar);
 app.put("/produto", Produto.atualizar);
+
+app.get("/mesa", Mesa.listar);
+app.get("/mesa/:id", Mesa.consultar);
+app.post("/mesa", Mesa.cadastrar);
+app.delete("/mesa/:id", Mesa.deletar);
+app.put("/mesa", Mesa.atualizar);
 
 app.get("/venda", Venda.listar);
 app.get("/venda/:id", Venda.consultar);

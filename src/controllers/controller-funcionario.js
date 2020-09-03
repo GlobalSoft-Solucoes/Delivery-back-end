@@ -110,17 +110,17 @@ module.exports = {
     },
 
 
-/*
-  async emailDisp(req, res) {
-    if (req.body.email == null)
-      res.status(400).send({ validou: "Erro, o campo email esta vazio" });
-    else {
-      const result = await db("FUNCIONARIO").where({
-        email: req.body.email,
-      });
 
-      if (result.length != 0) res.status(400);
-      else res.status(200);
-    }
-  },*/
+  // async emailDisp(req, res) {
+  //   if (req.body.email == null)
+  //     res.status(400).send({ validou: "Erro, o campo email esta vazio" });
+  //   else {
+  //     const result = await db("FUNCIONARIO").where({
+  //       email: req.body.email,
+  //     });
+
+  //     if (result.length != 0) res.status(400);
+  //     else res.status(200);
+  //   }
+  // },
 };
